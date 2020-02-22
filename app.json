@@ -1,0 +1,7 @@
+{
+  "name": "Take Note",
+  "description": "An easy way to share classwork",
+  "repository": "https://github.com/poiley/take-note.git",
+  "logo": "",
+  "keywords": ["python", "flask", "homework", "sharing"]
+}
