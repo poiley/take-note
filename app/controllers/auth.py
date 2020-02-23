@@ -2,7 +2,7 @@ import requests, urllib
 from flask import Blueprint, request, render_template, flash, session, redirect, url_for
 from flask_login import login_user, logout_user, login_required, current_user
 from werkzeug.security import generate_password_hash
-from app.extensions import login_manager
+from app.extensions import db, login_manager
 from app.forms.auth import SigninForm, SignupForm
 from app.models.user import User
 
@@ -41,7 +41,7 @@ def signup():
 
         login_user(user, remember=True)
 
-        return redirect(url_for('lecture.my', id=user.id))
+        return redirect(url_for('lecture.my'))
        
     return render_template("auth/signup.html", form=form)
 

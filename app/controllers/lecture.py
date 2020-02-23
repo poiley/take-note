@@ -22,10 +22,10 @@ def add():
 
         return redirect(url_for('lecture.my', user=u, lectures=user.lecture))
        
-    render_template("lecture/add.html", user=u, form=form)
+    return render_template("lecture/add.html", user=u, form=form)
 
 @login_required
 @blueprint.route('/my', methods=['GET'])
 def my():
     u = User.get(current_user.get_id())
-    render_template("lecture/my.html", user=u, lectures=u.lecture)
+    return render_template("lecture/my.html", user=u, lectures=u.lecture)

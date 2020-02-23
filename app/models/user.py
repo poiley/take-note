@@ -26,5 +26,17 @@ class User(db.Model):
     def get(id):
         return User.query.get(id)
 
+    def get_id(self):
+        return self.id
+
     def get_lecture(self):
         return User.query.with_entities(User.lecture)
+
+    def is_active(self):
+        return True
+
+    def is_authenticated(self):
+        return True
+    
+    def is_anonymous(self):
+        return not self.is_authenticated()

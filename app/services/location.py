@@ -37,7 +37,7 @@ def hall_to_coordinates(query):
     return results['lng'], results['lat']
 
 
-def write_to_file():
+def to_json():
     halls = scrape_site()
     for hall in halls:
         hall['x'], hall['y'] = hall_to_coordinates(hall['name'])
@@ -57,6 +57,6 @@ def get_halls():
         data = json.load(f)
 
     if data['written'] and data['written'] + 2592000 < time.time(): # 30 days in seconds 
-        return write_to_file()
+        return to_json()
     else:
         return data
