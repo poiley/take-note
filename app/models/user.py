@@ -17,3 +17,6 @@ class User(db.Model):
 
     def __repr__(self):
         return "<User: {}>".format(self.username)
+
+    def get(id):
+        return User.query.get(id)

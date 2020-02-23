@@ -2,7 +2,7 @@ import os
 
 from flask import Flask, render_template
 from . import settings, controllers, models
-from .extensions import db
+from .extensions import db, login_manager
 
 project_dir = os.path.dirname(os.path.abspath(__file__))
 
@@ -14,6 +14,9 @@ def create_app(config_object=settings):
     register_extensions(app)
     register_blueprints(app)
     register_errorhandlers(app)
+
+    app.config['SECRET_KEY'] = settings.SECRET_KEY
+
     return app
 
 def register_extensions(app):
@@ -22,12 +25,16 @@ def register_extensions(app):
 
     with app.app_context():
         db.create_all()
-        
+    
+    login_manager.init_app(app)
+
     return None
 
 def register_blueprints(app):
     """Register Flask blueprints."""
     app.register_blueprint(controllers.home.blueprint)
+    app.register_blueprint(controllers.auth.blueprint)
+    
     return None
 
 def register_errorhandlers(app):
