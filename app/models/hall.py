@@ -5,11 +5,13 @@ class Hall(db.Model):
 
     id      = db.Column(db.Integer(), primary_key=True)
     name    = db.Column(db.String(80), nullable = False)
-    # tuple   = db.Column(x, y)
+    x       = db.Column(db.Float())
+    y       = db.Column(db.Float())
 
-    def __init__(self, name, tuple):
+    def __init__(self, name, x=0, y=0):
         self.name   = name
-        self.tuple  = tuple
+        self.x      = x
+        self.y      = y
 
     def __repr__(self):
-        return "<Chat: {}>".format(self.id)
+        return "<Hall: {}>".format(self.id)

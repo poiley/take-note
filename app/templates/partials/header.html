@@ -14,7 +14,7 @@
             Tutorials
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="{{ url_for('tutorial.requesting' )}}">Requesting Data</a>
+            <a class="dropdown-item" href="">Requesting Data</a>
           </div>
         </li>
         {% if g.user %}
@@ -23,11 +23,11 @@
             {{ g.user['username'] }}
           </li>
           <li class="nav-item">
-            <a class="nav-link text-inherit" href="{{ url_for('auth.logout') }}">Log out</a>
+            <a class="nav-link text-inherit" href="">Log out</a>
           </li>
         {% else %}
           <li class="nav-item">
-            <a class="nav-link text-inherit" href="{{ url_for('auth.githubLogin') }}">
+            <a class="nav-link text-inherit" href="">
               Login with GitHub
             </a>
           </li>

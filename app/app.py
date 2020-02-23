@@ -22,6 +22,7 @@ def register_extensions(app):
 
     with app.app_context():
         db.create_all()
+        
     return None
 
 def register_blueprints(app):
