@@ -1,7 +1,7 @@
 from app.extensions import db
 import datetime
 
-class Notes(db.Model):
+class Note(db.Model):
     __tablename__ = 'notes'
 
     id      = db.Column(db.Integer(), primary_key=True)

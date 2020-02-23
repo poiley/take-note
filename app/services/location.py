@@ -6,7 +6,7 @@ import googlemaps
 GOOGLE_API_KEY = 'AIzaSyDhb8JEjwwnqsCiBOm_hHVOlxNfXbGOy14'
 gmaps = googlemaps.Client(GOOGLE_API_KEY)
 
-def get_halls():
+def scrape_site():
     r       = requests.get('https://schedules.wsu.edu/Home/Buildings', requests.utils.default_headers())
     soup    = BeautifulSoup(r.content, 'html.parser')
     table   = soup.find('table', {'id': 'buildings'})
@@ -37,13 +37,26 @@ def hall_to_coordinates(query):
     return results['lng'], results['lat']
 
 
-def write_to_file():
-    halls = get_halls()
+def to_json():
+    halls = scrape_site()
     for hall in halls:
         hall['x'], hall['y'] = hall_to_coordinates(hall['name'])
     
-    json_out            = { 'written': int(time.time()) }
+    json_out            = {}
+    json_out['written'] = int(time.time())
     json_out['halls']   = halls
 
-    with open('wsu_halls.json', 'w') as f:
+    with open('static/data/wsu_halls.json', 'r+') as f:
         json.dump(json_out, f)
+
+    return json_out
+
+
+def get_halls():
+    with open('static/data/wsu_halls.json', 'r+') as f:
+        data = json.load(f)
+
+    if data['written'] and data['written'] + 2592000 < time.time(): # 30 days in seconds 
+        return to_json()
+    else:
+        return data

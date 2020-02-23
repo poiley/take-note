@@ -2,7 +2,7 @@
 
 import os
 
-SECRET_KEY = os.urandom(32)
+SECRET_KEY = 'hello world'
 ENV = os.getenv('FLASK_ENV', default='production')
 DEBUG = ENV == 'development'
 SQLALCHEMY_TRACK_MODIFICATIONS = False
