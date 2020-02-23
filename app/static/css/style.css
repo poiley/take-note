@@ -15,3 +15,61 @@
   display: inline-block;
   vertical-align: text-top;
 }
+
+.container {
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100vh;
+  display: flex;
+}
+
+
+.container .btn-holder {
+  justify-content: flex-end;
+  display: flex;
+}
+
+div.discussion{
+  border-style: solid;
+  width: 100% - 400px;
+}
+
+.dropdown-content {
+  display: none;
+  position: left;
+  right: 0;
+  min-width: 160px;
+  z-index: 1;
+}
+.dropdown-container a {
+  color: black;
+  text-decoration: none;
+  text-align: left;
+  font-size: 16px;
+  display: block;
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+}
+
+.dropdown-container:hover .dropdown-content {
+  display: block;
+}
+
+div.note_container{
+  border-style: solid;
+  width: 100% - 400px;
+}
+
+#fixedbutton {
+  position: fixed;
+  bottom: 0px;
+  right: 0px; 
+}
+
+.notelogo{
+  width: 120px;
+  height: 120px;
+}
