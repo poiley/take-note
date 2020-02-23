@@ -4,6 +4,7 @@ from flask_login import login_user, logout_user, login_required, current_user
 from werkzeug.security import generate_password_hash
 from app.extensions import login_manager
 from app.forms.auth import SigninForm, SignupForm
+from app.models.user import User
 
 blueprint = Blueprint('auth', __name__, url_prefix='/auth')
 
@@ -33,14 +34,14 @@ def signup():
     form = SignupForm(request.form)
     
     if request.method == 'POST' and form.validate():
-        user = User(form.data['email'], form.data['username'], generate_password_hash(form.data['password']))
+        user = User(form.data['username'], form.data['displayname'], generate_password_hash(form.data['password']))
 
         db.session.add(user)
         db.session.commit()
 
         login_user(user, remember=True)
 
-        return redirect(url_for('auth.spotify', id=user.id))
+        return redirect(url_for('lecture.my', id=user.id))
        
     return render_template("auth/signup.html", form=form)
 
@@ -48,7 +49,7 @@ def signup():
 @login_required
 def signout():
     logout_user()
-    return redirect(url_for('site.home'))
+    return redirect(url_for('home.home'))
 
 @login_manager.user_loader
 def load_user(user_id):

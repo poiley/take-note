@@ -6,9 +6,8 @@ blueprint = Blueprint('home', __name__)
 
 @blueprint.route('/', methods=['GET'])
 def home():
-    if not current_user.is_authenticated:
-        return render_template('home/index_notauth.html')
-
-    user = User.get(current_user.get_id())
-
-    return render_template('home/index_auth.html', current_user=current_user)
+    if current_user.is_authenticated:
+        return redirect(url_for('lecture.my'))
+        # return render_template('home/index_auth.html', current_user=current_user)
+   
+    return render_template('home/index_notauth.html')
