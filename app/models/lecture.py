@@ -2,16 +2,17 @@ from app.extensions import db
 from app.models.hall import Hall
 from app.models.discussion import Discussion
 from app.models.user import UserLectureAssociation
+from app.services import schedule
 
 class Lecture(db.Model):
     __tablename__= 'lecture'
 
     id           = db.Column(db.Integer, primary_key=True)
-    dept         = db.Column(db.String(4), nullable=False)
+    dept         = db.Column(db.String(10), nullable=False)
     course_num   = db.Column(db.Integer, nullable=False)
-    title        = db.Column(db.String(50), nullable=False, unique=True)
+    title        = db.Column(db.String(50), nullable=False)
     section      = db.Column(db.Integer, nullable=False)
-    days         = db.Column(db.String(3), nullable=False)
+    days         = db.Column(db.String(10), nullable=False)
     start        = db.Column(db.Integer, nullable=False)
     end          = db.Column(db.Integer, nullable=False)
 
@@ -31,3 +32,13 @@ class Lecture(db.Model):
     
     def __repr__(self):
         return "<Lecture: {} {} {}>".format(self.dept, self.course_num, self.section)
+
+    def json_to_database():
+        classes = schedule.get_classes()['classes']
+        for c in classes:
+            try:
+                lect = Lecture(c['dept'], c['course_num'], c['title'], c['section'], c['days'], c['start'], c['end'])
+                db.session.add(lect)
+            except:
+                continue
+        db.session.commit()

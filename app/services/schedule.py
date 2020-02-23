@@ -71,19 +71,17 @@ def to_json():
     urls = get_urls(base_url)
     classes = get_classes_given_urls(urls)
 
-    with open('../static/data/wsu_classes.json', 'r+') as f:
+    with open('static/data/wsu_classes.json', 'r+') as f:
         json.dump(classes, f)
 
     return classes
 
 
 def get_classes(): 
-    with open('../static/data/wsu_classes.json', 'r+') as f:
+    with open('static/data/wsu_classes.json', 'r+') as f:
         data = json.load(f)
 
     if 'written' in data.keys() and data['written'] + 2592000 < time.time(): # 30 days in seconds 
         return to_json()
-    else:
+    else:   
         return data
-
-get_classes()
