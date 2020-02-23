@@ -1,4 +1,5 @@
 from app.extensions import db
+from werkzeug.security import check_password_hash
 
 UserLectureAssociation = db.Table('userlecture_association', db.Model.metadata,
     db.Column('user_id',    db.Integer, db.ForeignKey('user.id')),
@@ -40,3 +41,6 @@ class User(db.Model):
     
     def is_anonymous(self):
         return not self.is_authenticated()
+    
+    def check_password(self, password):
+        return check_password_hash(self.password, password)

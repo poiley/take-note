@@ -11,7 +11,7 @@ blueprint = Blueprint('auth', __name__, url_prefix='/auth')
 @blueprint.route('/signin', methods=['GET', 'POST'])
 def signin():
     if current_user.is_authenticated:
-        return redirect(url_for('site.home'))
+        return redirect(url_for('home.home'))
 
     form = SigninForm(request.form)
 
@@ -24,7 +24,7 @@ def signin():
         
         login_user(user, remember=True)
         
-        return redirect(url_for('site.home'))
+        return redirect(url_for('home.home'))
 
     return render_template('auth/signin.html', form=form)
 
