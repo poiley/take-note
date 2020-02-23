@@ -1,1 +1,530 @@
-[{"name": "Abelson Hall", "abbr": "ABEL", "x": -117.165361, "y": 46.729584}, {"name": "Animal Disease Biotechnology Facility", "abbr": "ADBF", "x": -117.1584201, "y": 46.7285902}, {"name": "Albrook Hydraulics Laboratory", "abbr": "ALBR", "x": -117.1706896, "y": 46.7311145}, {"name": "Avery Hall", "abbr": "AVER", "x": -117.1654133, "y": 46.7318142}, {"name": "Ensminger Beef Cattle Center", "abbr": "BFBL", "x": -117.2422843, "y": 46.69373299999999}, {"name": "Cattle Feeding Lab Annex", "abbr": "BLAB", "x": -117.1424814, "y": 46.7300027}, {"name": "Bohler Gymnasium Addition", "abbr": "BOAD", "x": -117.1620772, "y": 46.73319920000001}, {"name": "Bohler Gymnasium", "abbr": "BOHL", "x": -117.1620772, "y": 46.73319920000001}, {"name": "Bryan Hall", "abbr": "BRYN", "x": -117.1651704, "y": 46.7313622}, {"name": "Bustad Hall", "abbr": "BUST", "x": -117.1594116, "y": 46.7288196}, {"name": "Carpenter Hall", "abbr": "CARP", "x": -117.1681644, "y": 46.72992869999999}, {"name": "WSU Children's Center", "abbr": "CCC", "x": -117.1637434, "y": 46.7257738}, {"name": "Clark Hall", "abbr": "CLAR", "x": -117.1558242, "y": 46.7319708}, {"name": "Cleveland Hall", "abbr": "CLEV", "x": -117.1662418, "y": 46.7286784}, {"name": "College Hall", "abbr": "COLL", "x": -117.164256, "y": 46.7304354}, {"name": "Compton Union Building", "abbr": "CUB", "x": -117.1625132, "y": 46.7310689}, {"name": "Smith Center for Undergraduate Education", "abbr": "CUE", "x": -117.1616033, "y": 46.7297993}, {"name": "Daggy Hall", "abbr": "DAGG", "x": -117.1676636, "y": 46.7293719}, {"name": "Dana Hall", "abbr": "DANA", "x": -117.1689703, "y": 46.7297455}, {"name": "Dodgen Research Facility", "abbr": "DRF", "x": -117.1437662, "y": 46.7361198}, {"name": "Duncan Dunn Hall", "abbr": "DUDN", "x": -117.1672894, "y": 46.7328481}, {"name": "Eastlick Hall", "abbr": "EAST", "x": -117.1660756, "y": 46.7298572}, {"name": "Education Addition", "abbr": "EDAD", "x": -117.1666324, "y": 46.72824010000001}, {"name": "Engineering Laboratory Building", "abbr": "ELB", "x": -117.1703865, "y": 46.72966950000001}, {"name": "Electrical/Mechanical Engineering Building", "abbr": "EME", "x": -117.1688559, "y": 46.7304891}, {"name": "Engineering Teaching/Research Lab Building", "abbr": "ETRL", "x": -117.1697823, "y": 46.7296523}, {"name": "Hollingbery Field House", "abbr": "FLDH", "x": -117.1612966, "y": 46.7329123}, {"name": "Fine Arts Center", "abbr": "FNA", "x": -117.1676636, "y": 46.7293719}, {"name": "French Administration Building", "abbr": "FRAD", "x": -117.1581928, "y": 46.73041509999999}, {"name": "Food Science/Human Nutrition Building", "abbr": "FSHN", "x": -117.1557209, "y": 46.7326001}, {"name": "Fulmer Hall", "abbr": "FULM", "x": -117.1638252, "y": 46.7292948}, {"name": "Gannon-Goldsworthy Hall", "abbr": "GAGO", "x": -117.1628591, "y": 46.7277469}, {"name": "Gibb Pool", "abbr": "GIBB", "x": -117.162954, "y": 46.7327081}, {"name": "Palouse Ridge Golf Club", "abbr": "GOLC", "x": -117.1420425, "y": 46.7379942}, {"name": "Goertzen Hall", "abbr": "GTZN", "x": -117.1668246, "y": 46.7307423}, {"name": "General University Classroom To Be Scheduled", "abbr": "GUC", "x": -117.1542121, "y": 46.7319225}, {"name": "Heald Hall", "abbr": "HLD", "x": -117.1661112, "y": 46.7294379}, {"name": "Honors Hall", "abbr": "HNRS", "x": -117.1679789, "y": 46.7316876}, {"name": "Holland Library", "abbr": "HOLL", "x": -117.1636694, "y": 46.7313363}, {"name": "Hulbert Hall", "abbr": "HULB", "x": -117.1551928, "y": 46.7315046}, {"name": "Information Technology Building", "abbr": "ITB", "x": -117.1594167, "y": 46.7310096}, {"name": "Jackson Hall", "abbr": "JKSN", "x": -117.1661639, "y": 46.7309538}, {"name": "Johnson Hall", "abbr": "JSNH", "x": -117.1579193, "y": 46.7317162}, {"name": "Johnson Tower", "abbr": "JSNT", "x": -117.1627015, "y": 46.7297309}, {"name": "K House", "abbr": "KHSE", "x": -117.1604682, "y": 46.72725699999999}, {"name": "Kimbrough Music Building", "abbr": "KIMB", "x": -117.1650025, "y": 46.7322207}, {"name": "Kruegel-McAllister Hall", "abbr": "KMAC", "x": -117.1642306, "y": 46.7272986}, {"name": "Knott Dairy Center", "abbr": "KNOT", "x": -117.2422843, "y": 46.69373299999999}, {"name": "Kruegel Hall", "abbr": "KRUG", "x": -117.1641796, "y": 46.7272829}, {"name": "Lighty Student Services Building", "abbr": "LGTY", "x": -117.1576242, "y": 46.7304592}, {"name": "L. J. Smith Hall", "abbr": "LJSM", "x": -117.1568433, "y": 46.7294335}, {"name": "Lower Soccer Field", "abbr": "LSF", "x": -117.1648638, "y": 46.7337532}, {"name": "McAllister Hall", "abbr": "MCAL", "x": 0, "y": 0}, {"name": "McCoy Hall", "abbr": "MCOY", "x": -117.1603505, "y": 46.7284113}, {"name": "Meats Laboratory", "abbr": "MEAT", "x": -117.1525229, "y": 46.7313559}, {"name": "Math Learning Annex", "abbr": "MLA", "x": -117.1669427, "y": 46.7295492}, {"name": "Morrill Hall", "abbr": "MORL", "x": -117.1668633, "y": 46.7302981}, {"name": "Neill Hall", "abbr": "NEIL", "x": -117.1636198, "y": 46.7282894}, {"name": "Jewett Observatory", "abbr": "OBSR", "x": -117.1534777, "y": 46.7286072}, {"name": "Olympia Avenue Student Housing", "abbr": "OLYP", "x": -117.1604682, "y": 46.72725699999999}, {"name": "Owen Science & Engineering Library", "abbr": "OWEN", "x": -117.1653512, "y": 46.7288827}, {"name": "Ensminger Pavilion", "abbr": "PAV", "x": -117.1559124, "y": 46.7308288}, {"name": "Physical Education Building", "abbr": "PEB", "x": -117.1631554, "y": 46.7328528}, {"name": "Agronomy Seed House", "abbr": "SEED", "x": -117.1535892, "y": 46.7294779}, {"name": "Smith Gymnasium", "abbr": "SGYM", "x": -117.1640049, "y": 46.7327959}, {"name": "Shock Physics", "abbr": "SHOC", "x": -117.1626443, "y": 46.7287338}, {"name": "Sloan Hall", "abbr": "SLOA", "x": -117.1685723, "y": 46.7304774}, {"name": "The Spark:  Academic Information Hub", "abbr": "SPRK", "x": -117.1655342, "y": 46.7281512}, {"name": "Student Recreation Center", "abbr": "SRC", "x": -117.154277, "y": 46.737413}, {"name": "Martin Stadium", "abbr": "STAD", "x": -117.1604991, "y": 46.731831}, {"name": "Stephenson Dining Hall", "abbr": "STDH", "x": -117.166292, "y": 46.726024}, {"name": "Martin Stadium", "abbr": "STDM", "x": -117.1604991, "y": 46.731831}, {"name": "Steffen Center (Site)", "abbr": "STEF", "x": -117.1365177, "y": 46.7304541}, {"name": "Swine Center", "abbr": "SWIN", "x": 0, "y": 0}, {"name": "Todd Hall Addition", "abbr": "TDAD", "x": -117.1634265, "y": 46.7302459}, {"name": "Terrell Library", "abbr": "TERR", "x": -117.1636694, "y": 46.7313363}, {"name": "Thompson Hall", "abbr": "THOM", "x": -117.1667569, "y": 46.7312337}, {"name": "Thermal-Fluids Research Building", "abbr": "THRM", "x": -117.1704658, "y": 46.7303165}, {"name": "Tennis Courts", "abbr": "TNCT", "x": -117.1532914, "y": 46.7357589}, {"name": "Todd Hall", "abbr": "TODD", "x": -117.1634756, "y": 46.7298282}, {"name": "Troy Hall", "abbr": "TROY", "x": -117.1625526, "y": 46.7292333}, {"name": "Van Doren Hall", "abbr": "VAND", "x": -117.1644899, "y": 46.7317583}, {"name": "Vogel Plant Biosciences Building", "abbr": "VPBS", "x": -117.1542121, "y": 46.7319225}, {"name": "Veterinary Teaching Hospital", "abbr": "VTH", "x": -117.1586738, "y": 46.7279052}, {"name": "Webster Physical Sciences Building", "abbr": "WEBS", "x": -117.1637476, "y": 46.7287614}, {"name": "Wegner Hall", "abbr": "WEGN", "x": -117.1613391, "y": 46.7281617}, {"name": "Wilson-Short Hall", "abbr": "WILS", "x": -117.162492, "y": 46.7303384}, {"name": "Wilson-Short Hall", "abbr": "WLSH", "x": -117.162492, "y": 46.7303384}]
+[
+	{
+		"name": "Abelson Hall",
+		"abbr": "ABEL",
+		"x": -117.165361,
+		"y": 46.729584
+	},
+	{
+		"name": "Animal Disease Biotechnology Facility",
+		"abbr": "ADBF",
+		"x": -117.1584201,
+		"y": 46.7285902
+	},
+	{
+		"name": "Albrook Hydraulics Laboratory",
+		"abbr": "ALBR",
+		"x": -117.1706896,
+		"y": 46.7311145
+	},
+	{
+		"name": "Avery Hall",
+		"abbr": "AVER",
+		"x": -117.1654133,
+		"y": 46.7318142
+	},
+	{
+		"name": "Ensminger Beef Cattle Center",
+		"abbr": "BFBL",
+		"x": -117.2422843,
+		"y": 46.69373299999999
+	},
+	{
+		"name": "Cattle Feeding Lab Annex",
+		"abbr": "BLAB",
+		"x": -117.1424814,
+		"y": 46.7300027
+	},
+	{
+		"name": "Bohler Gymnasium Addition",
+		"abbr": "BOAD",
+		"x": -117.1620772,
+		"y": 46.73319920000001
+	},
+	{
+		"name": "Bohler Gymnasium",
+		"abbr": "BOHL",
+		"x": -117.1620772,
+		"y": 46.73319920000001
+	},
+	{
+		"name": "Bryan Hall",
+		"abbr": "BRYN",
+		"x": -117.1651704,
+		"y": 46.7313622
+	},
+	{
+		"name": "Bustad Hall",
+		"abbr": "BUST",
+		"x": -117.1594116,
+		"y": 46.7288196
+	},
+	{
+		"name": "Carpenter Hall",
+		"abbr": "CARP",
+		"x": -117.1681644,
+		"y": 46.72992869999999
+	},
+	{
+		"name": "WSU Children's Center",
+		"abbr": "CCC",
+		"x": -117.1637434,
+		"y": 46.7257738
+	},
+	{
+		"name": "Clark Hall",
+		"abbr": "CLAR",
+		"x": -117.1558242,
+		"y": 46.7319708
+	},
+	{
+		"name": "Cleveland Hall",
+		"abbr": "CLEV",
+		"x": -117.1662418,
+		"y": 46.7286784
+	},
+	{
+		"name": "College Hall",
+		"abbr": "COLL",
+		"x": -117.164256,
+		"y": 46.7304354
+	},
+	{
+		"name": "Compton Union Building",
+		"abbr": "CUB",
+		"x": -117.1625132,
+		"y": 46.7310689
+	},
+	{
+		"name": "Smith Center for Undergraduate Education",
+		"abbr": "CUE",
+		"x": -117.1616033,
+		"y": 46.7297993
+	},
+	{
+		"name": "Daggy Hall",
+		"abbr": "DAGG",
+		"x": -117.1676636,
+		"y": 46.7293719
+	},
+	{
+		"name": "Dana Hall",
+		"abbr": "DANA",
+		"x": -117.1689703,
+		"y": 46.7297455
+	},
+	{
+		"name": "Dodgen Research Facility",
+		"abbr": "DRF",
+		"x": -117.1437662,
+		"y": 46.7361198
+	},
+	{
+		"name": "Duncan Dunn Hall",
+		"abbr": "DUDN",
+		"x": -117.1672894,
+		"y": 46.7328481
+	},
+	{
+		"name": "Eastlick Hall",
+		"abbr": "EAST",
+		"x": -117.1660756,
+		"y": 46.7298572
+	},
+	{
+		"name": "Education Addition",
+		"abbr": "EDAD",
+		"x": -117.1666324,
+		"y": 46.72824010000001
+	},
+	{
+		"name": "Engineering Laboratory Building",
+		"abbr": "ELB",
+		"x": -117.1703865,
+		"y": 46.72966950000001
+	},
+	{
+		"name": "Electrical/Mechanical Engineering Building",
+		"abbr": "EME",
+		"x": -117.1688559,
+		"y": 46.7304891
+	},
+	{
+		"name": "Engineering Teaching/Research Lab Building",
+		"abbr": "ETRL",
+		"x": -117.1697823,
+		"y": 46.7296523
+	},
+	{
+		"name": "Hollingbery Field House",
+		"abbr": "FLDH",
+		"x": -117.1612966,
+		"y": 46.7329123
+	},
+	{
+		"name": "Fine Arts Center",
+		"abbr": "FNA",
+		"x": -117.1676636,
+		"y": 46.7293719
+	},
+	{
+		"name": "French Administration Building",
+		"abbr": "FRAD",
+		"x": -117.1581928,
+		"y": 46.73041509999999
+	},
+	{
+		"name": "Food Science/Human Nutrition Building",
+		"abbr": "FSHN",
+		"x": -117.1557209,
+		"y": 46.7326001
+	},
+	{
+		"name": "Fulmer Hall",
+		"abbr": "FULM",
+		"x": -117.1638252,
+		"y": 46.7292948
+	},
+	{
+		"name": "Gannon-Goldsworthy Hall",
+		"abbr": "GAGO",
+		"x": -117.1628591,
+		"y": 46.7277469
+	},
+	{
+		"name": "Gibb Pool",
+		"abbr": "GIBB",
+		"x": -117.162954,
+		"y": 46.7327081
+	},
+	{
+		"name": "Palouse Ridge Golf Club",
+		"abbr": "GOLC",
+		"x": -117.1420425,
+		"y": 46.7379942
+	},
+	{
+		"name": "Goertzen Hall",
+		"abbr": "GTZN",
+		"x": -117.1668246,
+		"y": 46.7307423
+	},
+	{
+		"name": "General University Classroom To Be Scheduled",
+		"abbr": "GUC",
+		"x": -117.1542121,
+		"y": 46.7319225
+	},
+	{
+		"name": "Heald Hall",
+		"abbr": "HLD",
+		"x": -117.1661112,
+		"y": 46.7294379
+	},
+	{
+		"name": "Honors Hall",
+		"abbr": "HNRS",
+		"x": -117.1679789,
+		"y": 46.7316876
+	},
+	{
+		"name": "Holland Library",
+		"abbr": "HOLL",
+		"x": -117.1636694,
+		"y": 46.7313363
+	},
+	{
+		"name": "Hulbert Hall",
+		"abbr": "HULB",
+		"x": -117.1551928,
+		"y": 46.7315046
+	},
+	{
+		"name": "Information Technology Building",
+		"abbr": "ITB",
+		"x": -117.1594167,
+		"y": 46.7310096
+	},
+	{
+		"name": "Jackson Hall",
+		"abbr": "JKSN",
+		"x": -117.1661639,
+		"y": 46.7309538
+	},
+	{
+		"name": "Johnson Hall",
+		"abbr": "JSNH",
+		"x": -117.1579193,
+		"y": 46.7317162
+	},
+	{
+		"name": "Johnson Tower",
+		"abbr": "JSNT",
+		"x": -117.1627015,
+		"y": 46.7297309
+	},
+	{
+		"name": "K House",
+		"abbr": "KHSE",
+		"x": -117.1604682,
+		"y": 46.72725699999999
+	},
+	{
+		"name": "Kimbrough Music Building",
+		"abbr": "KIMB",
+		"x": -117.1650025,
+		"y": 46.7322207
+	},
+	{
+		"name": "Kruegel-McAllister Hall",
+		"abbr": "KMAC",
+		"x": -117.1642306,
+		"y": 46.7272986
+	},
+	{
+		"name": "Knott Dairy Center",
+		"abbr": "KNOT",
+		"x": -117.2422843,
+		"y": 46.69373299999999
+	},
+	{
+		"name": "Kruegel Hall",
+		"abbr": "KRUG",
+		"x": -117.1641796,
+		"y": 46.7272829
+	},
+	{
+		"name": "Lighty Student Services Building",
+		"abbr": "LGTY",
+		"x": -117.1576242,
+		"y": 46.7304592
+	},
+	{
+		"name": "L. J. Smith Hall",
+		"abbr": "LJSM",
+		"x": -117.1568433,
+		"y": 46.7294335
+	},
+	{
+		"name": "Lower Soccer Field",
+		"abbr": "LSF",
+		"x": -117.1648638,
+		"y": 46.7337532
+	},
+	{
+		"name": "McAllister Hall",
+		"abbr": "MCAL",
+		"x": 0,
+		"y": 0
+	},
+	{
+		"name": "McCoy Hall",
+		"abbr": "MCOY",
+		"x": -117.1603505,
+		"y": 46.7284113
+	},
+	{
+		"name": "Meats Laboratory",
+		"abbr": "MEAT",
+		"x": -117.1525229,
+		"y": 46.7313559
+	},
+	{
+		"name": "Math Learning Annex",
+		"abbr": "MLA",
+		"x": -117.1669427,
+		"y": 46.7295492
+	},
+	{
+		"name": "Morrill Hall",
+		"abbr": "MORL",
+		"x": -117.1668633,
+		"y": 46.7302981
+	},
+	{
+		"name": "Neill Hall",
+		"abbr": "NEIL",
+		"x": -117.1636198,
+		"y": 46.7282894
+	},
+	{
+		"name": "Jewett Observatory",
+		"abbr": "OBSR",
+		"x": -117.1534777,
+		"y": 46.7286072
+	},
+	{
+		"name": "Olympia Avenue Student Housing",
+		"abbr": "OLYP",
+		"x": -117.1604682,
+		"y": 46.72725699999999
+	},
+	{
+		"name": "Owen Science & Engineering Library",
+		"abbr": "OWEN",
+		"x": -117.1653512,
+		"y": 46.7288827
+	},
+	{
+		"name": "Ensminger Pavilion",
+		"abbr": "PAV",
+		"x": -117.1559124,
+		"y": 46.7308288
+	},
+	{
+		"name": "Physical Education Building",
+		"abbr": "PEB",
+		"x": -117.1631554,
+		"y": 46.7328528
+	},
+	{
+		"name": "Agronomy Seed House",
+		"abbr": "SEED",
+		"x": -117.1535892,
+		"y": 46.7294779
+	},
+	{
+		"name": "Smith Gymnasium",
+		"abbr": "SGYM",
+		"x": -117.1640049,
+		"y": 46.7327959
+	},
+	{
+		"name": "Shock Physics",
+		"abbr": "SHOC",
+		"x": -117.1626443,
+		"y": 46.7287338
+	},
+	{
+		"name": "Sloan Hall",
+		"abbr": "SLOA",
+		"x": -117.1685723,
+		"y": 46.7304774
+	},
+	{
+		"name": "The Spark:  Academic Information Hub",
+		"abbr": "SPRK",
+		"x": -117.1655342,
+		"y": 46.7281512
+	},
+	{
+		"name": "Student Recreation Center",
+		"abbr": "SRC",
+		"x": -117.154277,
+		"y": 46.737413
+	},
+	{
+		"name": "Martin Stadium",
+		"abbr": "STAD",
+		"x": -117.1604991,
+		"y": 46.731831
+	},
+	{
+		"name": "Stephenson Dining Hall",
+		"abbr": "STDH",
+		"x": -117.166292,
+		"y": 46.726024
+	},
+	{
+		"name": "Martin Stadium",
+		"abbr": "STDM",
+		"x": -117.1604991,
+		"y": 46.731831
+	},
+	{
+		"name": "Steffen Center (Site)",
+		"abbr": "STEF",
+		"x": -117.1365177,
+		"y": 46.7304541
+	},
+	{
+		"name": "Swine Center",
+		"abbr": "SWIN",
+		"x": 0,
+		"y": 0
+	},
+	{
+		"name": "Todd Hall Addition",
+		"abbr": "TDAD",
+		"x": -117.1634265,
+		"y": 46.7302459
+	},
+	{
+		"name": "Terrell Library",
+		"abbr": "TERR",
+		"x": -117.1636694,
+		"y": 46.7313363
+	},
+	{
+		"name": "Thompson Hall",
+		"abbr": "THOM",
+		"x": -117.1667569,
+		"y": 46.7312337
+	},
+	{
+		"name": "Thermal-Fluids Research Building",
+		"abbr": "THRM",
+		"x": -117.1704658,
+		"y": 46.7303165
+	},
+	{
+		"name": "Tennis Courts",
+		"abbr": "TNCT",
+		"x": -117.1532914,
+		"y": 46.7357589
+	},
+	{
+		"name": "Todd Hall",
+		"abbr": "TODD",
+		"x": -117.1634756,
+		"y": 46.7298282
+	},
+	{
+		"name": "Troy Hall",
+		"abbr": "TROY",
+		"x": -117.1625526,
+		"y": 46.7292333
+	},
+	{
+		"name": "Van Doren Hall",
+		"abbr": "VAND",
+		"x": -117.1644899,
+		"y": 46.7317583
+	},
+	{
+		"name": "Vogel Plant Biosciences Building",
+		"abbr": "VPBS",
+		"x": -117.1542121,
+		"y": 46.7319225
+	},
+	{
+		"name": "Veterinary Teaching Hospital",
+		"abbr": "VTH",
+		"x": -117.1586738,
+		"y": 46.7279052
+	},
+	{
+		"name": "Webster Physical Sciences Building",
+		"abbr": "WEBS",
+		"x": -117.1637476,
+		"y": 46.7287614
+	},
+	{
+		"name": "Wegner Hall",
+		"abbr": "WEGN",
+		"x": -117.1613391,
+		"y": 46.7281617
+	},
+	{
+		"name": "Wilson-Short Hall",
+		"abbr": "WILS",
+		"x": -117.162492,
+		"y": 46.7303384
+	},
+	{
+		"name": "Wilson-Short Hall",
+		"abbr": "WLSH",
+		"x": -117.162492,
+		"y": 46.7303384
+	}
+]
