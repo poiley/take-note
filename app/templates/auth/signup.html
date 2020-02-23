@@ -13,7 +13,6 @@
         
             <div class="dropdown-content">
                 <a href="/">Home</a>
-                <a href="../profile/search">Search Profiles</a>
                 <a href="../auth/signout">Sign Out</a>
             </div>
         </div>
@@ -57,14 +56,10 @@
                             <form class="form" method="POST" accept-charset="UTF-8">
                                 {{ form.csrf_token }}
                                 {{ render_field(form.username, placeholder="Username", autofocus="", class="form-input") }}
-                                {{ render_field(form.email, placeholder="Email Address", class="form-input") }}
+                                {{ render_field(form.displayname, placeholder="Display Name", class="form-input") }}
                                 {{ render_field(form.password, placeholder="Password", class="form-input") }}
-
-                                <div class="form-captcha">
-                                    {{ render_field(form.recaptcha, placeholder="Recaptcha", class="form-captcha") }}
-                                </div>
                                 
-                                <button class="btn form-btn" type="submit" value="signup">Submit</button>
+                                <button class="btn form-btn" type="submit" value="signup">Sign Up</button>
                             </form>
                         </div>
                     </div>
