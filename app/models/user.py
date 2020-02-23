@@ -8,11 +8,12 @@ UserLectureAssociation = db.Table('userlecture_association', db.Model.metadata,
 class User(db.Model):
     __tablename__ = 'user'
 
-    id          = db.Column(db.Integer(), primary_key=True)
+    id          = db.Column(db.Integer, primary_key=True)
     username    = db.Column(db.String(80), unique=True, nullable=False)
     password    = db.Column(db.String(1000), nullable=False)
     display_name= db.Column(db.String(80))
-    lecture     = db.relationship("lecture", secondary=UserLectureAssociation)
+    
+    lecture     = db.relationship("Lecture", secondary=UserLectureAssociation, back_populates="user")
 
     def __init__(self, username, display_name, password):
         self.username       = username

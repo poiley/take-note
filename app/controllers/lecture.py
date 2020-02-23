@@ -10,23 +10,22 @@ blueprint = Blueprint('lecture', __name__, url_prefix='/lecture')
 @blueprint.route('/add', methods=['GET', 'POST'])
 def add():
     form = AddLectureForm(request.form)
+    u = User.get(current_user.get_id())
     
     if request.method == 'POST' and form.validate():
-        user = User.get(current_user.get_id())
-        
-        lect = Lecture.query.filter_by(dept=form.dept) \
-                            .filter_by(course_num=form.course_num) \
-                            .filter_by(section=form.section).first()
+        l = Lecture.query.filter_by(dept=form.dept) \
+                         .filter_by(course_num=form.course_num) \
+                         .filter_by(section=form.section).first()
 
-        if lect:
-            user.lecture.append(lect)
+        if l:
+            u.lecture.append(l)
 
-        return redirect(url_for('lecture.my', user=user, lectures=user.lecture))
+        return redirect(url_for('lecture.my', user=u, lectures=user.lecture))
        
-    render_template("lecture/add.html", user=user, form=form)
+    render_template("lecture/add.html", user=u, form=form)
 
 @login_required
 @blueprint.route('/my', methods=['GET'])
 def my():
-    user = User.get(current_user.get_id())
-    render_template("lecture/my.html", user=user lectures=user.lecture)
+    u = User.get(current_user.get_id())
+    render_template("lecture/my.html", user=u, lectures=u.lecture)
