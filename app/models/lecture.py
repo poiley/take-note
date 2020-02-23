@@ -10,10 +10,9 @@ class Lecture(db.Model):
     days        = db.Column(db.String(3), nullable=False)
     start       = db.Column(db.Integer(), nullable=False)
     end         = db.Column(db.Integer(), nullable=False)
-    hall        = db.relationship("Hall", uselist=False, back_populates="lecture")
-    # hall        = db.Column(x, y)
-    # notes       = db.Column(x, y)
-    # discussion  = db.Column(x, y)
+    hall        = db.relationship("hall")
+    note        = db.relationship("note", uselist=False, back_populates="lecture")
+    discussion  = db.relationship("discussion", uselist=False, back_populates="lecture")
 
     def __init__(self, dept, course_num, section, days, start, end):
         self.dept       = dept
