@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template
-from flask_login import current_user
+from flask_login import current_user, login_required
 from app.models.user import User
 
 blueprint = Blueprint('note', __name__, url_prefix='/note')
