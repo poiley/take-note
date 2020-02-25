@@ -1,0 +1,22 @@
+{% extends "layouts/layout.html" %}
+{% block body %}
+<!-- body ================================================== -->
+<section id="home" class="s-home target-section" data-parallax="scroll" data-image-src="{{ url_for('static', filename='img/hero-bg.jpg') }}" data-natural-width=3000 data-natural-height=2000 data-position-y=top>
+    <div class="shadow-overlay"></div>
+
+    {% block content %}{% endblock %}
+
+    <ul class="home-sidelinks">
+        {% for item in sidelinks %}
+            <li><a class="smoothscroll" href="{{ url_for(item.link) }}">{{ item.name }}<span>{{ item.subtitle }}</span></a></li>
+        {% endfor %}
+    </ul> <!-- end home-sidelinks -->
+
+    {% if upload_button == true %}
+        <a href="#about" class="home-scroll smoothscroll">
+            <span class="home-scroll__text">Scroll Down</span>
+            <span class="home-scroll__icon"></span>
+        </a> <!-- end home-scroll -->
+    {% endif %}  
+</section> <!-- end s-home -->
+{% endblock %}

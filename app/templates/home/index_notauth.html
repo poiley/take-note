@@ -1,34 +1,11 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Home Page</title>
-        <link rel="stylesheet" href="static/css/styles.css">
-    </head>
+{% extends "partials/content.html" %}
+{% block content %}
+<div class="home-content">
+    <div class="row home-content__main">
+        <h1> Take Note </h1>
+        <h2 style="margin-top:0;"> An easy way to share classwork</h2>
+    </div> <!-- end home-content__main -->
+</div> <!-- end home-content -->
+{% endblock %}
 
-    <body>    
-        <div class="body-container">
-            <div class="dropdown-container">
-                <img src="static/img/logo.png" class="logo">
-            </div>
-            
-            <div class="content-container">
-                <div class="heading-container">
-                    <h1>Welcome.</h1>
-                </div>
 
-                <div>
-                    <div class="btn-container">
-                        <a href="auth/signup">
-                            <button class="btn btn-primary">Sign Up</button>
-                        </a>
-                    </div>
-                    <div class="btn-container">
-                        <a href="auth/signin">
-                            <button class="btn btn-primary">Sign In</button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </body>
-</html>

@@ -1,0 +1,34 @@
+<!-- header ================================================== -->
+<header class="s-header">
+  <div class="header-logo">
+    <a class="site-logo" href="{{ url_for('home.home') }}">
+      <img src="{{ url_for('static', filename='img/logo.svg') }}" alt="Homepage">
+    </a>
+  </div> <!-- end header-logo -->
+
+  <nav class="header-nav">
+    <a href="#0" class="header-nav__close" title="close"><span>Close</span></a>
+    <div class="header-nav__content">
+      <h3>MENU</h3>
+      <ul class="header-nav__list">
+        {% for item in sidebar %}
+            {% if item.http == true %}
+            <li><a class="smoothscroll" href="{{ item.link }}" title="{{ item.name }}">{{ item.name }}</a></li>
+            {% else %}
+            <li><a class="smoothscroll" href="{{ url_for(item.link) }}" title="{{ item.name }}">{{ item.name }}</a></li>
+            {% endif %}
+        {% endfor %}
+      </ul>
+      <br>
+      <p>
+        Made with ❤️  by three college students in Pullman, Washington. If you want more, head over to 
+        <a href="https://github.com/poiley/">Ben's</a>, 
+        <a href="https://github.com/BrevinS/">Brevin's</a>, or 
+        <a href="https://github.com/CharlieNickerson/">Charlie's</a> github.
+      </p>
+    </div> <!-- end header-nav__content -->
+  </nav> <!-- end header-nav -->
+  <a class="header-menu-toggle" href="#0">
+    <span class="header-menu-icon"></span>
+  </a>
+</header> <!-- end s-header -->

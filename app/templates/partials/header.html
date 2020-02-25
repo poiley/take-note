@@ -1,39 +1,32 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-gray-dark text-white">
-  <div class="container">
-    <a class="text-white link-reset text-inherit pr-3" href="/">
-      My Hackathon Project
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Tutorials
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="">Requesting Data</a>
-          </div>
-        </li>
-        {% if g.user %}
-          <li class="nav-item p-2 pr-3">
-            <img src="{{ g.user['avatar_url'] }}" class='rounded mr-2' style='width:24px;height:24px;'/>
-            {{ g.user['username'] }}
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-inherit" href="">Log out</a>
-          </li>
-        {% else %}
-          <li class="nav-item">
-            <a class="nav-link text-inherit" href="">
-              Login with GitHub
-            </a>
-          </li>
+<head>
+    <!--- basic page needs ================================================== -->
+    <meta charset="utf-8">
+    <title>
+        Take Note
+        {% if title == True %}
+             - {{ title }}
         {% endif %}
-      </ul>
+    </title>
 
-    </div>
-  </div>
-</nav>
+    <!-- mobile specific metas ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS ================================================== -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/vendor.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    
+    <!-- script ================================================== -->
+    <script src="{{ url_for('static', filename='js/modernizr.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/pace.min.js') }}"></script>
+
+    <!-- favicons ================================================== -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+
+    <!-- font awesome ================================================== -->
+    <!-- <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet"> -->
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
