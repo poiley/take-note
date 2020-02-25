@@ -5,6 +5,7 @@ from werkzeug.security import generate_password_hash
 from app.extensions import db, login_manager
 from app.forms.auth import SigninForm, SignupForm
 from app.models.user import User
+from app.models.site import Sidelink, Sidebar
 
 blueprint = Blueprint('auth', __name__, url_prefix='/auth')
 
@@ -26,7 +27,9 @@ def signin():
         
         return redirect(url_for('home.home'))
 
-    return render_template('auth/signin.html', form=form)
+    sidelinks   = [Sidelink('Sign In', "javascript:document.getElementById('signin').submit()", 'submit', True)]
+    sidebar     = [Sidebar('Home', 'home.home'), Sidebar('Github', 'https://github.com/poiley/take-note', True)]
+    return render_template('auth/signin.html', sidelinks=sidelinks, sidebar=sidebar, form=form)
 
 
 @blueprint.route('/signup', methods=['GET', 'POST'])
@@ -42,8 +45,10 @@ def signup():
         login_user(user, remember=True)
 
         return redirect(url_for('lecture.my'))
-       
-    return render_template("auth/signup.html", form=form)
+    
+    sidelinks   = [Sidelink('Sign Up', "javascript:document.getElementById('signup').submit()", 'submit', True)]
+    sidebar     = [Sidebar('Home', 'home.home'), Sidebar('Sign In', 'auth.signin'), Sidebar('Github', 'https://github.com/poiley/take-note', True)]
+    return render_template('auth/signup.html', sidelinks=sidelinks, sidebar=sidebar, form=form)
 
 @blueprint.route("/signout")
 @login_required

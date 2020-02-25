@@ -1,14 +1,18 @@
 {% extends "layouts/layout.html" %}
 {% block body %}
 <!-- body ================================================== -->
-<section id="home" class="s-home target-section" data-parallax="scroll" data-image-src="{{ url_for('static', filename='img/hero-bg.jpg') }}" data-natural-width=3000 data-natural-height=2000 data-position-y=top>
+<section id="home" class="s-home target-section" data-parallax="scroll" data-image-src="{{ url_for('static', filename='img/colored-pencils-bg.jpg') }}" data-natural-width=3000 data-natural-height=2000 data-position-y=top>
     <div class="shadow-overlay"></div>
 
     {% block content %}{% endblock %}
 
     <ul class="home-sidelinks">
         {% for item in sidelinks %}
-            <li><a class="smoothscroll" href="{{ url_for(item.link) }}">{{ item.name }}<span>{{ item.subtitle }}</span></a></li>
+            {% if item.http %}
+                <li><a class="smoothscroll" href="{{ item.link }}">{{ item.name }}<span>{{ item.subtitle }}</span></a></li>
+            {% else %}
+                <li><a class="smoothscroll" href="{{ url_for(item.link) }}">{{ item.name }}<span>{{ item.subtitle }}</span></a></li>
+            {% endif %}
         {% endfor %}
     </ul> <!-- end home-sidelinks -->
 

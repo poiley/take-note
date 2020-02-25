@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Home Page</title>
-        <link rel="stylesheet" href="static/css/style.css">
-    </head>
+{% extends "partials/content.html" %}
+{% block content %}
+<div class="home-content">
+    <div class="row home-content__main">
+        <h1> Take Note </h1>
+        <h2 style="margin-top:0;"> Hello, {{ current_user.display_name }}. </h2>
+    </div> <!-- end home-content__main -->
+</div> <!-- end home-content -->
+{% endblock %}
 
-    <body>
-        <div class="body-container">
-            
-        </div>
-    </body>
-</html>
+
