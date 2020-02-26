@@ -9,9 +9,9 @@
     <ul class="home-sidelinks">
         {% for item in sidelinks %}
             {% if item.http %}
-                <li><a class="smoothscroll" href="{{ item.link }}">{{ item.name }}<span>{{ item.subtitle }}</span></a></li>
+                <li><a class="sidelink" href="{{ item.link }}">{{ item.name }}<span>{{ item.subtitle }}</span></a></li>
             {% else %}
-                <li><a class="smoothscroll" href="{{ url_for(item.link) }}">{{ item.name }}<span>{{ item.subtitle }}</span></a></li>
+                <li><a class="sidelink" href="{{ url_for(item.link) }}">{{ item.name }}<span>{{ item.subtitle }}</span></a></li>
             {% endif %}
         {% endfor %}
     </ul> <!-- end home-sidelinks -->

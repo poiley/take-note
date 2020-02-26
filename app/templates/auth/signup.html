@@ -37,7 +37,7 @@
                 </div>
             {% endif %}
 
-            <form class="form" method="POST" accept-charset="UTF-8">
+            <form class="form" id="signup" method="POST" accept-charset="UTF-8">
                 {{ form.csrf_token }}
                 {{ render_field(form.displayname, placeholder="Display Name", class="full-width form-input", autofocus="", type="text") }}
                 {{ render_field(form.username, placeholder="Username", class="full-width form-input", autofocus="", type="text") }}

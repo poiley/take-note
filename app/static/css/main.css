@@ -1,9 +1,4 @@
 /* =================================================================== 
- *
- *  Transcend v1.0 Main Stylesheet
- *  03-19-2018
- *  ------------------------------------------------------------------
- *
  *  TOC:
  *  # base style overrides
  *    ## links
@@ -433,19 +428,11 @@ img.pull-left {
 /* ------------------------------------------------------------------- 
  * ## tables
  * ------------------------------------------------------------------- */
-table {
-  border-width: 0;
-  width: 100%;
+/* table {
+  width: 80%;
   max-width: 100%;
   font-family: "metropolis-regular", sans-serif;
-}
-
-th,
-td {
-  padding: 1.5rem 3rem;
-  text-align: left;
-  border-bottom: 1px solid #e8e8e8;
-}
+} */
 
 th {
   color: #000000;
@@ -459,7 +446,7 @@ td {
 
 th:first-child,
 td:first-child {
-  padding-left: 0;
+  padding-left: 25px;
 }
 
 th:last-child,
@@ -626,7 +613,7 @@ select {
   padding: 1.5rem 2.4rem;
   border: 0;
   outline: none;
-  color: #151515;
+  color: whitesmoke;
   font-family: "metropolis-regular", sans-serif;
   font-size: 1.5rem;
   line-height: 3rem;
@@ -699,7 +686,7 @@ input[type="url"]:focus,
 input[type="password"]:focus,
 textarea:focus,
 select:focus {
-  color: #000000;
+  color: white;
 }
 
 label,
@@ -1327,6 +1314,8 @@ input::-moz-focus-inner {
  * ## header logo
  * ------------------------------------------------------------------- */
 .header-logo {
+  -webkit-filter: invert(100%); /* safari 6.0 - 9.0 */
+  filter: invert(100%);
   z-index: 501;
   display: inline-block;
   margin: 0;
@@ -1674,7 +1663,7 @@ input::-moz-focus-inner {
 .s-home {
   width: 100%;
   height: 100%;
-  min-height: 786px;
+  min-height: 400px;
   background-color: transparent;
   position: relative;
   display: table;
@@ -1773,7 +1762,7 @@ input::-moz-focus-inner {
   display: block;
   padding: 0;
   text-align: left;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(8, 1, 1, 0.582);
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;

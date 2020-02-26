@@ -13,9 +13,9 @@
       <ul class="header-nav__list">
         {% for item in sidebar %}
             {% if item.http == true %}
-            <li><a class="smoothscroll" href="{{ item.link }}" title="{{ item.name }}">{{ item.name }}</a></li>
+            <li><a class="" href="{{ item.link }}" title="{{ item.name }}">{{ item.name }}</a></li>
             {% else %}
-            <li><a class="smoothscroll" href="{{ url_for(item.link) }}" title="{{ item.name }}">{{ item.name }}</a></li>
+            <li><a class="" href="{{ url_for(item.link) }}" title="{{ item.name }}">{{ item.name }}</a></li>
             {% endif %}
         {% endfor %}
       </ul>
