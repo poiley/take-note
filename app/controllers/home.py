@@ -8,6 +8,7 @@ blueprint = Blueprint('home', __name__)
 
 @blueprint.route('/', methods=['GET'])
 def home():
+    # Lecture.json_to_database()
     if current_user.is_authenticated:
         return redirect(url_for('lecture.my'))
 
