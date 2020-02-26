@@ -14,7 +14,10 @@ def _get_days(s):
     return ''.join([i for i in s if i.isalpha()])
 
 def _get_time(s):
-    return ''.join([i for i in s if not i.isalpha()]).replace(',', '').split('-')
+    r = ''.join([i for i in s if not i.isalpha()]).replace(',', '').split('-')
+    if r == ['']:
+        return 'Online', 'Online'
+    return r
 
 def get_urls(initial_url):
     r           = requests.get(initial_url, requests.utils.default_headers())
@@ -32,35 +35,51 @@ def get_classes_given_urls(urls):
     classes = { 'written' : 0, 'classes' : [] }
 
     for subdir in urls:
-        r       = requests.get(subdir[1], requests.utils.default_headers())
-        soup    = BeautifulSoup(r.content, 'html.parser')
-        table   = soup.find('tbody')
+        r          = requests.get(subdir[1], requests.utils.default_headers())
+        soup       = BeautifulSoup(r.content, 'html.parser')
+        table      = soup.find('tbody')
 
-        d          = {}
-        department = ""
+        section    = ""
+        professor  = ""
         course_num = ""
         title      = ""
         for row in table.findAll('tr'):
-            if row.attrs['class'][0] == 'course_title':
-                course_title_split  = [x for x in row.find('td').string.split(' ') if x]
-                department          = course_title_split[0]
-                course_num          = int(course_title_split[1])
-                title               = ' '.join(course_title_split[2:])
-            elif 'section' in row.attrs['class']:
-                try:
-                    d['section']        = row.find('td', {'headers' : 'sched_sec'}).find('a').string
-                    d['professor']      = row.find('td', {'headers' : 'sched_instructor'}).string
-                    d['days']           = _get_days(row.find('td', {'headers' : 'sched_days'}).string)
-                    d['start'], d['end']= _get_time(row.find('td', {'headers' : 'sched_days'}).string)
-                    d['hall']           = row.find('td', {'headers' : 'sched_loc'}).string
-                except:
-                    continue
-            
-            d['dept']               = department
-            d['course_num']         = course_num
-            d['title']              = title
+            lecture = { 'dept': subdir[0] }
 
-            classes['classes'].append(d)
+            if row.attrs['class'][0] == 'course_title':
+                course_title_split      = [x for x in row.find('td').string.split(' ') if x]
+
+                course_num  = int(course_title_split[1])
+                title       = ' '.join(course_title_split[2:])
+            elif 'section' in row.attrs['class']:
+                section_raw              = row.find('td', {'headers' : 'sched_sec'})
+                if section_raw is None:
+                    lecture['section']   = section
+                else:
+                    lecture['section']   = section_raw.find('a').string
+                    section              = lecture['section']
+
+                if 'lab' in section.lower():
+                    continue
+
+                professor_raw            = row.find('td', {'headers' : 'sched_instructor'})
+                if professor_raw is None:
+                    lecture['professor'] = professor
+                else:
+                    lecture['professor'] = professor_raw.string
+                    professor            = lecture['professor']
+                    if lecture['professor'] == '':
+                        lecture['professor'] = 'No Professor'
+
+                lecture['days'] = _get_days(row.find('td', {'headers' : 'sched_days'}).string)
+                lecture['start'], lecture['end'] = _get_time(row.find('td', {'headers' : 'sched_days'}).string)
+                lecture['hall'] = row.find('td', {'headers' : 'sched_loc'}).string
+                
+                lecture['course_num']   = course_num 
+                lecture['title']        = title
+
+                print('Writing Lecture to data structure -- {} {} {}, starts at {}, taught by {}'.format(lecture['dept'], lecture['course_num'], lecture['title'], lecture['start'], lecture['professor']))
+                classes['classes'].append(lecture)
     
     classes['written'] = int(time.time())
     
@@ -71,9 +90,11 @@ def to_json():
     urls = get_urls(base_url)
     classes = get_classes_given_urls(urls)
 
-    with open('static/data/wsu_classes.json', 'r+') as f:
-        json.dump(classes, f)
-
+    print('Writing Lecture data structure to file...')
+    with open('static/data/wsu_classes.json', 'w', encoding='utf-8') as f:
+        json.dump(classes, f, ensure_ascii=False, indent=4)
+    print('Wrote to file.')
+    
     return classes
 
 
