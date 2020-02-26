@@ -9,9 +9,9 @@
     <ul class="home-sidelinks">
         {% for item in sidelinks %}
             {% if item.http %}
-                <li><a class="sidelink" href="{{ item.link }}">{{ item.name }}<span>{{ item.subtitle }}</span></a></li>
+                <li onclick="{{ item.onclick }}"><a class="{{ item.css_classes }}" href="{{ item.link }}">{{ item.name }}<span>{{ item.subtitle }}</span></a></li>
             {% else %}
-                <li><a class="sidelink" href="{{ url_for(item.link) }}">{{ item.name }}<span>{{ item.subtitle }}</span></a></li>
+                <li onclick="{{ item.onclick }}"><a class="{{ item.css_classes }}" href="{{ url_for(item.link) }}">{{ item.name }}<span>{{ item.subtitle }}</span></a></li>
             {% endif %}
         {% endfor %}
     </ul> <!-- end home-sidelinks -->

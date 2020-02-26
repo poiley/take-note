@@ -31,10 +31,30 @@
     <!-- script ================================================== -->
     <script src="{{ url_for('static', filename='js/modernizr.js') }}"></script>
     <script src="{{ url_for('static', filename='js/pace.min.js') }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- favicons ================================================== -->
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+
+    <script type="text/javascript">
+        function toggleClass(el, className) {
+            if (el.className.indexOf(className) >= 0) {
+                el.className = el.className.replace(className,"");
+            } else {
+                if ($(".selected")[0]) {
+                    $(".selected").removeClass(className);
+                }
+                el.className  += className;
+            }
+        }
+
+        function addClass() {
+            if($(".selected")) {
+                window.location.href = '/lecture/add?id=' + $('.selected').attr('id');
+            }
+        }
+    </script>
 
     <!-- font awesome ================================================== -->
     <!-- <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet"> -->
