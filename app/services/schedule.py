@@ -1,4 +1,4 @@
-import requests, json, time
+import requests, json, time, datetime
 from bs4 import BeautifulSoup
 
 prefix      = 'https://'
@@ -106,3 +106,17 @@ def get_classes():
         return to_json()
     else:   
         return data
+
+def get_weekday_letter():
+    weekday = datetime.datetime.today().weekday()
+    if weekday  == 0:
+        return 'M'
+    elif weekday == 1:
+        return 'TU'
+    elif weekday == 2:
+        return 'W'
+    elif weekday == 3:
+        return 'TH'
+    elif weekday == 4:
+        return 'F'
+    return 'A'

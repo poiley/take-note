@@ -2,6 +2,7 @@ from app.extensions import db
 from app.models.hall import Hall
 from app.models.discussion import Discussion
 from app.models.user import UserLectureAssociation
+from app.models.hall import Hall
 from app.services import schedule
 
 class Lecture(db.Model):
@@ -44,6 +45,9 @@ class Lecture(db.Model):
         for c in classes:
             try:
                 lect = Lecture(c['dept'], c['course_num'], c['title'], c['section'], c['days'], c['start'], c['end'], c['professor'])
+
+                lect.hall = Hall.query.filter(Hall.abbr == c['hall'].split(' ')[0]).first()
+
                 print('Adding Lecture {} {} {}, starts at {}, taught by {}'.format(lect.dept, lect.course_num, lect.title, lect.start, lect.professor))
                 db.session.add(lect)
             except Exception as e:

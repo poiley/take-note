@@ -1,14 +1,15 @@
 from flask import Blueprint, render_template, redirect, url_for
 from flask_login import current_user
 from app.models.user import User
-from app.models.lecture import Lecture
 from app.models.site import Sidelink, Sidebar
+
+from app.models.lecture import Lecture
+from app.models.hall import Hall
 
 blueprint = Blueprint('home', __name__)
 
 @blueprint.route('/', methods=['GET'])
 def home():
-    # Lecture.json_to_database()
     if current_user.is_authenticated:
         return redirect(url_for('lecture.my'))
 

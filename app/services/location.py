@@ -1,7 +1,7 @@
+import googlemaps
 import requests, json, time
 from bs4 import BeautifulSoup
 
-import googlemaps
 
 GOOGLE_API_KEY = 'AIzaSyDhb8JEjwwnqsCiBOm_hHVOlxNfXbGOy14'
 gmaps = googlemaps.Client(GOOGLE_API_KEY)
@@ -60,3 +60,8 @@ def get_halls():
         return to_json()
     else:
         return data
+
+def get_distance(hall, current): # hall object, then current location tuple
+    x = float(hall.x) - float(current[0])
+    y = float(hall.y) - float(current[1])
+    return (x**2 + y**2)**.5
