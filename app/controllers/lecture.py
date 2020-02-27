@@ -26,7 +26,7 @@ def search():
         if len(results.all()) == 0:
             return redirect(url_for('lecture.search'))
         elif len(results.all()) == 1:
-            return redirect(url_for('lecture.add', lecture=results.all()[0].id))
+            return redirect(url_for('lecture.add', id=[results.all()[0].id]))
 
         lecture_ids = []
         for result in results.all():
