@@ -19,5 +19,4 @@ def board():
 
     sidelinks = [Sidelink('My Lectures', 'lecture.my', 'View lectures.'), Sidelink('Chat', '#', 'Chat with classmates.', True), Sidelink('Notes', 'note.view', 'See the work classmates have shared.')]
     sidebar   = [Sidebar('My Lectures', 'lecture.my'), Sidebar('Github', 'https://github.com/poiley/take-note', True), Sidebar('Sign Out', 'auth.signout')]
-
     return render_template('discussion/board.html', lecture=lect, sidelinks=sidelinks, sidebar=sidebar)
