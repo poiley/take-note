@@ -1,6 +1,14 @@
 {% extends "partials/content.html" %}
 
 {% block content %}
+<script type="text/javascript">
+    function addClass() {
+        if($(".selected")) {
+            window.location.href = '/lecture/add?id=' + $('.selected').attr('id');
+        }
+    }
+</script>
+
 <div class="home-content" style="vertical-align: top;">
     <div class="row home-content__main wrap-table100">
         <div>
@@ -13,7 +21,7 @@
                         <th class="column4">Day & Time</th>
                     </tr>
                 </thead>
-                <tbody style="background-color:white;">
+                <tbody style="background-color: white;">
                     {% for lecture in results %}
                         <tr onclick="toggleClass(this, 'selected')" id="{{ lecture.id }}">
                             <td class="column1">{{ lecture.dept }}</td>

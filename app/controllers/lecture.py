@@ -11,6 +11,7 @@ from app.services.location import get_halls, get_distance
 from app.services.schedule import get_weekday_letter
 import time
 from datetime import datetime
+import numpy
 
 blueprint = Blueprint('lecture', __name__, url_prefix='/lecture')
 
@@ -39,7 +40,7 @@ def search():
 
         return search_results(lecture_ids)
        
-    sidelinks = [Sidelink('Search', "javascript:document.getElementById('searchform').submit()", 'Submit query', True)]
+    sidelinks = [Sidelink('Search', "javascript:document.getElementById('searchform').submit()", 'Submit query', True), Sidelink('Locate', "lecture.locate", 'Get a list of classes currently in session near you')]
     sidebar   = [Sidebar('My Lectures', 'lecture.my'), Sidebar('Github', 'https://github.com/poiley/take-note', True), Sidebar('Sign Out', 'auth.signout')]
     return render_template('lecture/search.html', sidelinks=sidelinks, sidebar=sidebar, form=form)
 
@@ -47,7 +48,6 @@ def search():
 @blueprint.route('/result')
 def search_results(ids):
     results = []
-
     for i in ids:
         results.append(Lecture.get(i))
 
@@ -74,7 +74,7 @@ def add():
 def my():
     u = User.get(current_user.get_id())
 
-    sidelinks = [Sidelink('Add A Lecture', 'lecture.search', 'Add a lecture to your schedule.')]
+    sidelinks = [Sidelink('Add A Lecture', 'lecture.search', 'Add a lecture to your schedule.'), Sidelink('View Class', '#', 'View the selected lecture.', True, onclick="viewClass()")]
     sidebar   = [Sidebar('My Lectures', 'lecture.my'), Sidebar('Github', 'https://github.com/poiley/take-note', True), Sidebar('Sign Out', 'auth.signout')]
     return render_template('lecture/my.html', sidelinks=sidelinks, sidebar=sidebar, user=u, lectures=u.lecture)
 
@@ -87,44 +87,51 @@ def locate():
         halls = Hall.query.all()
 
         closest_hall = halls[0]
-        min_value = get_distance(closest_hall, current_location)
 
+        hall_distance_map = []
         for hall in halls:
-            if get_distance(hall, current_location) < min_value:
-                min_value = get_distance(hall, current_location)
-                closest_hall = hall
-        return match(int(closest_hall.id))
+            hall_distance_map.append((hall, get_distance(hall, current_location)))
+
+        hall_distance_map = [item for item in hall_distance_map if item[1] < 100]
+        hall_distance_map_sorted = sorted(hall_distance_map, key=lambda x: x[1])
+
+        sd = numpy.array([hall[1] for hall in hall_distance_map_sorted]).std()
+
+        less_than_five_stddev = [item for item in hall_distance_map_sorted if (item[1]/sd) * 100 <= 5]
+
+        return match([int(i[0].id) for i in less_than_five_stddev])
     else:
         return render_template('lecture/location.html')
 
 @login_required
 @blueprint.route('/match')
-def match(id):
-    if not id:
+def match(ids):
+    if not ids:
         return redirect(url_for('lecture.my'))
 
-    h                     = Hall.query.filter_by(abbr='TODD').first()
-    lectures_filtered_ids = []
-    # now                   = datetime.now()
-    now = datetime(2020,1,1,12,30)
-    for lecture in Lecture.query.all():
-        if lecture.start == 'Online':
-            continue
-        
-        start_time = convert_string_to_time(lecture.start)
-        end_time   = convert_string_to_time(lecture.end)
+    nearby_halls          = [Hall.query.filter_by(id=ids[0]).first()]
+    for i in range(1, len(ids)):
+        nearby_halls.append(Hall.query.filter_by(id=ids[i]).first())
 
-        if now.time() >= start_time.time() and now.time() <= end_time.time():
-            if lecture.hall_id == h.id:
-                if get_weekday_letter().lower() in lecture.days.lower():
-                    lectures_filtered_ids.append(lecture.id)
+    lectures_filtered_ids = []
+    now                   = datetime.now()
+    for h in nearby_halls:
+        for lecture in Lecture.query.filter_by(hall_id=h.id).all():
+            if lecture.start == 'Online':
+                continue
+            
+            start_time = convert_string_to_time(lecture.start)
+            end_time   = convert_string_to_time(lecture.end)
+
+            if now.time() >= start_time.time() and now.time() <= end_time.time():
+                    if get_weekday_letter().lower() in lecture.days.lower():
+                        lectures_filtered_ids.append(lecture.id)
 
     return search_results(lectures_filtered_ids)
 
-
 def convert_string_to_time(input):
     if '.' in str(input):
-        if str(input).split('.')[1] == '1':
+        if len(str(input).split('.')[1]) == 1:
             return datetime.strptime(str(input) + '0', "%H.%M")
         else:
             return datetime.strptime(str(input), "%H.%M")

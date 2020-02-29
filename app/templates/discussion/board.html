@@ -1,30 +1,16 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <style>
-        </style>
-        <title>Discussion Board</title>
-        <link rel="stylesheet" href="/home/brevin/repos/take-note/app/static/css/style.css">
-    </head>
-    <body>
-        <div class="body-container">
-            <div class="dropdown-container">
-                <img src="/home/brevin/repos/take-note/app/static/img/5001-512.png" class="logo">
-                <div class="dropdown-content">
-                    <a href="/">Home</a>
-                    <a href="/home/brevin/repos/take-note/app/templates/note/view.html">View Class Notes</a>
-                    <a href="../auth/signout">Sign Out</a>
-                </div>
+{% extends "partials/content.html" %}
+
+{% block content %}
+<div class="home-content" style="vertical-align: top;">
+    <div class="row home-content__main wrap-table100">
+        <div style="text-align:center;">
+            Discussion Board
+            <div class="discussion"> 
+                <p>Student Name</p>
+                <p>Post</p>
+                <p>Datetime Display</p>
             </div>
-            <div align="center">
-                Discussion Board
-                <div class="discussion"> 
-                    <p>Student Name</p>
-                    <p>Post</p>
-                    <p>Datetime Display</p>
-                </div>
-            </div>
-            <a href="#head"><img src="/home/brevin/repos/take-note/app/static/img/newnote.png" class="notelogo" id="fixedbutton"></a>
         </div>
-    </body>
-</html>
+    </div> <!-- end home-content__main -->
+</div> <!-- end home-content -->
+{% endblock %}

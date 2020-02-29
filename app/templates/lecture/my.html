@@ -1,5 +1,14 @@
 {% extends "partials/content.html" %}
+
 {% block content %}
+<script type="text/javascript">
+    function viewClass() {
+        if($(".selected")) {
+            window.location.href = '/discussion/board?id=' + $('.selected').attr('id');
+        }
+    }
+</script>
+
 <div class="home-content" style="vertical-align: top;">
     <div class="row home-content__main wrap-table100">
         <div>
@@ -14,7 +23,7 @@
                 </thead>
                 <tbody style="background-color: white;">
                     {% for lecture in lectures %}
-                        <tr>
+                        <tr onclick="toggleClass(this, 'selected')" id="{{ lecture.id }}">
                             <td class="column1">{{ lecture.dept }}</td>
                             <td class="column2">{{ lecture.course_num }}</td>
                             <td class="column3">{{ lecture.title }}</td>
