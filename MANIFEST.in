@@ -1,4 +1,4 @@
-include app/schema.sql
+include app.sqlite
 graft app/static
 graft app/templates
 graft app/models
